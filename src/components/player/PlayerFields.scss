@@ -1,0 +1,16 @@
+.players_fields {
+  &_submit {
+    margin-top: 20px !important;
+  }
+}
+
+.player_field {
+  position: relative;
+  margin: 10px auto;
+
+  &_close {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
