@@ -4,11 +4,6 @@ import { EXTENDED_CELL } from '../../consts/CELL_TYPES'
 import { FORM_ERRORS } from '../../consts/ERRORS'
 import { TextField, Button } from '@material-ui/core'
 
-interface IInputField {
-  index: number;
-  name: string;
-}
-
 const BowlingController = ({ nextStep, type }: { nextStep: Function, type: string }) => {
   const [values, setValues] = useState<number[]>([])
   const { handleSubmit, errors, control } = useForm()

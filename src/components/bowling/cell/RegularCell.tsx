@@ -9,11 +9,11 @@ const RegularCell  = ({ data }: { data: IBowlingCell }) => {
   const total = data.total || EMPTY_SIGN
   const index = data.index
 
-  if(val1 === 10){
+  if(data.values[0] === 10){
     val2 = "X"
     val1 = EMPTY_SIGN
   }
-  if(val1 !== 10 && data.values[0] + data.values[1] === 10) val2 = "/"
+  if(data.values[0] !== 10 && data.values[0] + data.values[1] === 10) val2 = "/"
 
   return (
     <div className="bowling_cell">

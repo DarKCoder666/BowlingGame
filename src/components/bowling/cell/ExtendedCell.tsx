@@ -10,11 +10,11 @@ const ExtendedCell = ({ data}: {data: IBowlingCell}) => {
   const total = data.total || EMPTY_SIGN
   const index = data.index
 
-  if(val1 === 10) val1 = "X" 
-  if(val2 === 10) val2 = "X" 
-  if(val3 === 10) val3 = "X" 
+  if(data.values[0] === 10) val1 = "X" 
+  if(data.values[0] === 10) val2 = "X" 
+  if(data.values[0] === 10) val3 = "X" 
 
-  if(val1 !== 10 && data.values[0] + data.values[1] === 10) val2 = "/"
+  if(data.values[0] !== 10 && data.values[0] + data.values[1] === 10) val2 = "/"
 
   return (
     <div className="bowling_cell">
