@@ -1,8 +1,9 @@
 import React from 'react'
 import '../Bowling.scss'
 import { EMPTY_SIGN } from '../../../consts/CELL_TYPES'
+import { IBowlingCell } from '../../../types/bowling.type'
 
-const RegularCell: React.FC = ({ data }) => {
+const RegularCell  = ({ data }: { data: IBowlingCell }) => {
   let val1 = data.values[0] || EMPTY_SIGN
   let val2 = data.values[1] || EMPTY_SIGN
   const total = data.total || EMPTY_SIGN
@@ -12,7 +13,7 @@ const RegularCell: React.FC = ({ data }) => {
     val2 = "X"
     val1 = EMPTY_SIGN
   }
-  if(val1 !== 10 && val1 + val2 === 10) val2 = "/"
+  if(val1 !== 10 && data.values[0] + data.values[1] === 10) val2 = "/"
 
   return (
     <div className="bowling_cell">

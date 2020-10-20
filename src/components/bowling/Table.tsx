@@ -7,7 +7,7 @@ import { IBowlingCell, IBowlingTable } from '../../types/bowling.type'
 
 import './Bowling.scss'
 
-const Table: React.FC = ({ data, active, isOver }: { data: IBowlingTable, active: boolean, isOver: boolean }) => {
+const Table = ({ data, active, isOver }: { data: IBowlingTable, active: boolean, isOver: boolean }) => {
   let totalScore: number = 0
   const { table, username } = data
   const cells = table.map((cell: IBowlingCell, index: number) => {

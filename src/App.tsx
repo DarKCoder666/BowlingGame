@@ -7,7 +7,7 @@ import history from './history'
 import Home from './pages/Home'
 import Game from './pages/Game'
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <Router history={history}>
       <Container className="app" >

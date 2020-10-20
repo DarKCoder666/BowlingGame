@@ -3,7 +3,7 @@ import '../Bowling.scss'
 import { EMPTY_SIGN } from '../../../consts/CELL_TYPES'
 import { IBowlingCell } from '../../../types/bowling.type'
 
-const ExtendedCell: React.FC = ({ data}: {data: IBowlingCell}) => {
+const ExtendedCell = ({ data}: {data: IBowlingCell}) => {
   let val1 = data.values[0] || EMPTY_SIGN
   let val2 = data.values[1] || EMPTY_SIGN
   let val3 = data.values[2] || EMPTY_SIGN

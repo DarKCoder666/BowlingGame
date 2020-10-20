@@ -9,12 +9,12 @@ interface IInputField {
   name: string;
 }
 
-const BowlingController: React.FC = ({ nextStep, type }: { nextStep: Function, type: string }) => {
+const BowlingController = ({ nextStep, type }: { nextStep: Function, type: string }) => {
   const [values, setValues] = useState<number[]>([])
   const { handleSubmit, errors, control } = useForm()
   const nameBase: string = 'BowlingController'
   const isExtended: boolean = type === EXTENDED_CELL
-  const fields: React.FC<IInputField>[] = []
+  const fields: JSX.Element[] = []
   let numberOfFields: number = 2
 
   if (isExtended) {
@@ -24,12 +24,11 @@ const BowlingController: React.FC = ({ nextStep, type }: { nextStep: Function, t
   }
 
   const onSubmit = () => {
-    const result: number[] = values.map(v => parseInt(v))
     const sum: number = values.reduce((a, b) => a + b, 0)
 
     if (type === EXTENDED_CELL && sum > 30) return alert("Sum of two throws can not be greater then 10!")
     if (type !== EXTENDED_CELL && sum > 10) return alert("Sum of two throws can not be greater then 10!")
-    nextStep(result)
+    nextStep(values)
   }
 
   const updateValue = ({ index, value }) => {
@@ -68,7 +67,7 @@ const BowlingController: React.FC = ({ nextStep, type }: { nextStep: Function, t
   )
 }
 
-const InputField: React.FC<IInputField> = ({ index, name, control, errors, updateValue }) => {
+const InputField = ({ index, name, control, errors, updateValue }: {index: number, name: string, control: any, errors: object, updateValue: Function}) => {
   return (
     <Controller
       name={name}

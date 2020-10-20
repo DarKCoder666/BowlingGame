@@ -5,8 +5,8 @@ import { useForm } from 'react-hook-form'
 import { IPlayer } from '../../types/player.type'
 import './PlayerFields.scss'
 
-const PlayersFields: React.FC = ({ data, setData, name, nextStep }: { data: IPlayer[], setData: Function, name: string, nextStep: Function }) => {
-  const [idCounter, setIdCounter] = useState<Number>(0)
+const PlayersFields = ({ data, setData, name, nextStep }: { data: IPlayer[], setData: Function, name: string, nextStep: Function }) => {
+  const [idCounter, setIdCounter] = useState<number>(0)
   const { handleSubmit, errors, control } = useForm<any>()
 
   const createField = () => {

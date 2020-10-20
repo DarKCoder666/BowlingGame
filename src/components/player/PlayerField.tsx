@@ -7,7 +7,7 @@ import { IPlayer } from '../../types/player.type'
 import { FORM_ERRORS } from '../../consts/ERRORS'
 import './PlayerFields.scss'
 
-const PlayerField: React.FC = ({ updateField, removeField, data, errors, control }: { updateField: Function, removeField: Function, data: IPlayer, errors: Object, control: any }) => {
+const PlayerField = ({ updateField, removeField, data, errors, control }: { updateField: Function, removeField: Function, data: IPlayer, errors: Object, control: any }) => {
   return (
     <div className="player_field">
       <Controller

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from '@material-ui/core';
 
-const Home: React.FC = ({ history }) => {
+const Home = ({ history }) => {
   return (
     <div>
       <h1>Welcome to bowling!</h1>

@@ -3,9 +3,9 @@ import PlayersFields from '../components/player/PlayersFields'
 import Bowling from '../components/bowling/Bowling'
 import { IPlayer } from '../types/player.type'
 
-const Game: React.FC = () => {
+const Game = () => {
   const [players, setPlayers] = useState<IPlayer[]>([])
-  const [step, setStep] = useState<Number>(0)
+  const [step, setStep] = useState<number>(0)
 
   const nextStep = () => {
     setStep(step + 1)

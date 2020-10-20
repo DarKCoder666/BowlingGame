@@ -4,9 +4,10 @@ import { REGULAR_CELL, EXTENDED_CELL, EMPTY_SIGN } from '../../consts/CELL_TYPES
 import Table from './Table'
 import BowlingController from './BowlingController'
 import { IBowlingCell, IBowlingTable } from '../../types/bowling.type'
+import { IPlayer } from '../../types/player.type'
 
-const Bowling: React.FC = ({ players }) => {
-  const [tablesData, setTablesData] = useState<IBowlingTable>([])
+const Bowling = ({ players }: {players: IPlayer[]}) => {
+  const [tablesData, setTablesData] = useState<IBowlingTable[]>([])
   const [activeTableIndex, setActiveTableIndex] = useState<number>(0)
   const [round, setRound] = useState<number>(0)
   const [isOver, setIsOver] = useState<boolean>(false)
@@ -24,7 +25,7 @@ const Bowling: React.FC = ({ players }) => {
       tableInitialData.push(cell)
     }
 
-    const tables:IBowlingTable = players.map(p => ({
+    const tables:IBowlingTable[] = players.map(p => ({
       id: counter++,
       username: p.username,
       table: JSON.parse(JSON.stringify(tableInitialData)) // Deep clone
@@ -101,7 +102,7 @@ const Bowling: React.FC = ({ players }) => {
   }
 
   const tables = tablesData.map((t, index) => (
-    <Table isOver={isOver} key={index} data={t} active={activeTableIndex === t.id} nextStep={nextStep} />
+    <Table isOver={isOver} key={index} data={t} active={activeTableIndex === t.id} />
   ))
 
   return (
