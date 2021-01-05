@@ -4,6 +4,7 @@ import { Button } from '@material-ui/core';
 const Home = ({ history }) => {
   return (
     <div>
+      <h1>Hello world</h1>
       <h1>Welcome to bowling!</h1>
       <h3>Let's start!</h3>
       <div>
